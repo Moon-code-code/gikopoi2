@@ -1,22 +1,32 @@
-#vue-app.theme-yellow {
+#vue-app.theme-yellow,
+#page-container.theme-yellow,
+.theme-yellow#page-container {
     background-color: #F2DD98;
     color: #49360F;
     scrollbar-color: #C49A36 #F2DD98;
     font-family: Monospace;
 }
 
+/* Also color the page behind the container so the whole window is yellow */
+html:has(.theme-yellow),
+body:has(.theme-yellow) {
+    background-color: #F2DD98;
+    scrollbar-color: #C49A36 #F2DD98;
+}
+
 .theme-yellow h1 a {
     color: #8A6116;
 }
 
-.theme-yellow .message a,
-.theme-yellow .message-author {
+.theme-yellow .message a {
     color: #835B12;
     font-weight: bold;
 }
 
 .theme-yellow .message-author {
     padding-right: 2px;
+    color: #835B12;
+    font-weight: bold;
 }
 
 .theme-yellow .log-dividers .message {
@@ -45,11 +55,11 @@
 .theme-yellow .popup button {
     appearance: button;
     background-color: #E7BF3F;
+    color: #49360F;
     border: 1px solid #9B7418;
     border-radius: 4px;
     box-shadow: #FFF0B8 4px 4px 0 0, #9B7418 4px 4px 0 1px;
     box-sizing: border-box;
-    color: #49360F;
     cursor: pointer;
     display: inline-block;
     font-size: 12pt;
@@ -65,7 +75,10 @@
     white-space: nowrap;
 }
 
-.theme-yellow button:focus,
+.theme-yellow button:focus {
+    text-decoration: none;
+}
+
 .theme-yellow button:hover {
     text-decoration: none;
 }
@@ -77,6 +90,7 @@
 
 .theme-yellow button:not([disabled]):active {
     box-shadow: #FFF0B8 2px 2px 0 0, #9B7418 2px 2px 0 1px;
+    transform: translate(2px, 2px);
 }
 
 .theme-yellow .stream-buttons button.red-button,
@@ -89,18 +103,18 @@
 
 .theme-yellow .popup {
     background-color: #FFF0B8;
-    border: 1px solid #B28A31;
-    border-radius: 8px;
     color: #49360F;
+    border-radius: 8px;
 }
 
-.theme-yellow .popup .popup-titlebar,
-.theme-yellow .popup th {
+.theme-yellow .popup .popup-titlebar {
     background-color: #E3C45E;
     color: #49360F;
 }
 
 .theme-yellow .popup th {
+    background-color: #E3C45E;
+    color: #49360F;
     font-weight: bold;
 }
 
@@ -120,6 +134,7 @@
     font-weight: bold;
 }
 
+/* Arrow buttons: dark icon drawn with a mask, same as before */
 .theme-yellow .arrow-button {
     position: relative;
     background-image: none;
